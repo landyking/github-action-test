@@ -10,3 +10,8 @@ test("is nil", async () => {
   let a;
   expect(_.isNil(a)).toBe(true);
 });
+
+test("failure", async () => {
+  let a;
+  expect(!_.isNil(a)).toBe(true);
+});
