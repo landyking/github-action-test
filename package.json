@@ -18,6 +18,29 @@
   "homepage": "https://github.com/landyking/github-action-test#readme",
   "dependencies": {
     "jest": "^28.1.1",
+    "jest-junit": "^13.2.0",
     "lodash": "^4.17.21"
+  },
+  "jest-junit": {
+    "suiteName": "jest tests",
+    "outputDirectory": ".",
+    "outputName": "reports/jest-junit.xml",
+    "uniqueOutputName": "false",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true",
+    "includeConsoleOutput": "true"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "jest-junit",
+        {
+          "suiteName": "jest tests"
+        }
+      ]
+    ]
   }
 }
